@@ -1,0 +1,136 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e698f1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before,
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 5s ease-in-out;
+}
+
+body::before {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTO2TgcFSFfAmEhBPUKVqqa7wczM9s8JSVLDg&s');
+    opacity: 1;
+    z-index: -2;
+}
+
+body::after {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh-CQvGrSWOWiAyVQYdr_HO87FkC3zhrqLHg&s');
+    opacity: 0;
+    z-index: -1;
+    animation: slide 10s infinite;
+}
+
+@keyframes slide {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.container {
+    background: rgb(217, 217, 38);
+    padding:70px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+    position: relative;
+    z-index: 1;
+}
+
+.container h2 {
+    margin: 0 0 20px;
+    color: #e74c3c;
+}
+h2{
+    font-size: 30px
+}
+
+.upload-box {
+    border: 2px dashed #e74c3c;
+    border-radius: 10px;
+    padding: 30px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.upload-box:hover {
+    background-color: rgba(231, 76, 60, 0.1);
+}
+
+.upload-box input[type="file"] {
+    display: none;
+}
+
+.input-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.input-container img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.input-container input[type="text"] {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-left: 10px;
+}
+
+.input-container .actions {
+    display: flex;
+    align-items: center;
+}
+
+.input-container .actions button {
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.input-container .actions button.remove {
+    background-color: #e74c3c;
+}
+
+.input-container .actions button.remove:hover {
+    background-color: #c0392b;
+}
